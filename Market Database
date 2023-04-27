@@ -1,0 +1,23 @@
+--Create a grocery store database
+
+CREATE TABLE market (id INTEGER PRIMARY KEY, item TEXT, department TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO market VALUES (1, "apple", "produce", 42, 1.99);
+INSERT INTO market VALUES (2, "bananas", "produce", 50, 0.20);
+INSERT INTO market VALUES (3, "broccoli", "produce", 16, 0.80);
+INSERT INTO market VALUES (4, "potatoes", "produce", 36, 1);
+INSERT INTO market VALUES (5, "chicken", "meat", 12, 7);
+INSERT INTO market VALUES (6, "ground beef", "meat", 18, 9);
+INSERT INTO market VALUES (7, "salmon", "seafood", 8, 10);
+INSERT INTO market VALUES (8, "shrimp", "seafood", 5, 7);
+INSERT INTO market VALUES (9, "bread", "bakery", 26, 4);
+INSERT INTO market VALUES (10, "bagels", "bakery", 20, 5);
+INSERT INTO market VALUES (11, "muffins", "bakery", 15, 3);
+INSERT INTO market VALUES (12, "cake", "bakery", 8, 25);
+INSERT INTO market VALUES (13, "chicken soup", "canned goods", 30, 2);
+INSERT INTO market VALUES (14, "black beans", "canned goods", 30, 1);
+INSERT INTO market VALUES (15, "tomato sauce", "canned goods", 22, 2);
+
+--Display how many items in each department
+
+SELECT department, SUM (quantity) FROM market GROUP BY department;
