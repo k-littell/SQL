@@ -1,0 +1,35 @@
+CREATE TABLE scientists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    birth_year INTEGER,
+    death_year INTEGER);
+    
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("Albert Einstein", 1879, 1955);
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("Galileo Galilei", 1564, 1642);
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("George Carver", 1864, 1943);
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("Charles Darwin", 1809, 1882);
+INSERT INTO scientists (fullname, birth_year) VALUES ("Sheldon Cooper", 1980);
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("Marie Curie", 1867, 1934);
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("Alexander Fleming", 1981, 1955);
+INSERT INTO scientists (fullname, birth_year, death_year) VALUES ("Linus Pauling", 1901, 1994);
+
+CREATE TABLE expertise (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    expertise TEXT);
+    
+INSERT INTO expertise (fullname, expertise) VALUES ("Albert Einstein", "Physics");
+INSERT INTO expertise (fullname, expertise) VALUES ("Galileo Galilei", "Astronomy");
+INSERT INTO expertise (fullname, expertise) VALUES ("George Carver", "Agriculture");
+INSERT INTO expertise (fullname, expertise) VALUES ("Charles Darwin", "Biology");
+INSERT INTO expertise (fullname, expertise) VALUES ("Sheldon Cooper", "Physics");
+INSERT INTO expertise (fullname, expertise) VALUES ("Marie Curie", "Chemistry");
+INSERT INTO expertise (fullname, expertise) VALUES ("Alexander Fleming", "Microbiology");
+INSERT INTO expertise (fullname, expertise) VALUES ("Linus Pauling", "Chemistry");
+
+/*Return area of expertise for each scientist*/
+
+SELECT scientists.fullname, expertise.expertise
+    FROM scientists
+    JOIN expertise
+    ON scientists.fullname=expertise.fullname;
