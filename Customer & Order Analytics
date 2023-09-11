@@ -23,7 +23,8 @@ AND orderID <> 'Order ID';
 
 #4. Which product was the cheapest one sold in January, and what was the price? 
 SELECT distinct Product,
-price FROM BIT_DB.JanSales 
+price
+FROM BIT_DB.JanSales 
 ORDER BY price ASC LIMIT 1;
 
 #5. What is the total revenue for each product sold in January?
@@ -81,7 +82,7 @@ WHERE length(orderid) = 6
 AND orderid <> 'Order ID';
 
 #12. What was the average quantity of products purchased per account in February? 
-select SUM(quantity)/COUNT(cust.acctnum)
+SELECT SUM(quantity)/COUNT(cust.acctnum)
 FROM BIT_DB.FebSales
 LEFT JOIN BIT_DB.customers
 ON FebSales.orderid=customers.order_id
